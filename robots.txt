@@ -1,0 +1,19 @@
+User-agent: Baiduspider
+Disallow: /
+User-agent: EtaoSpider
+Disallow: /
+User-Agent: 360Spider
+Disallow: /
+User-Agent: Yisouspider
+Disallow: /
+User-Agent: Sogouspider
+Disallow: /
+User-agent: Sosospider
+Disallow: /
+User-agent: sogou spider
+Disallow: /
+User-agent: YodaoBot
+Disallow: /
+User-agent: *
+Disallow:
+Sitemap: https://josta.me/sitemap.xml

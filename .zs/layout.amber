@@ -1,0 +1,55 @@
+doctype 5
+html[lang="en-US"]
+	head
+		meta[charset="UTF-8"]
+		title {{ title }}
+		meta[name="description"][content=description]
+		meta[name="author"][content="Josta Yeè"]
+		meta[http-equiv="X-UA-Compatible"][content="IE=edge"]
+		meta[name="viewport"][content="width=device-width"]
+		link[rel="alternate"][type="application/rss+xml"][title="RSS"][href="https://josta.me/feed.xml"]
+		link[rel="canonical"][href=url]
+
+		// OpenGraph data
+		meta[property="og:title"][content=title]
+		meta[property="og:type"][content="article"]
+		meta[property="og:url"][content=url]
+		meta[property="og:image"][content="https://josta.me/logo.png"]
+		meta[property="og:description"][content=description]
+		meta[property="og:locale"][content="en_US"]
+
+		// Twitter card data
+		meta[name="twitter:card"][content="summary"]
+		meta[name="twitter:site"][content="@jostyee"]
+
+		// Styles
+		link[href="/styles.css"][rel="stylesheet"][type="text/css"]
+
+		// Favicons
+		link[rel="shortcut icon"][href="/favicon.ico"]
+		link[rel="apple-touch-icon-precomposed"][href="/favicon.128.png"]
+
+	body
+		header
+			nav
+				a.logo[href="/"] yee
+			div.empty
+			nav
+				section
+					a[href="/blog.html"] blog
+					a[href="/about.html"] about
+				section
+					a[href="https://twitter.com/jostyee"] @me
+					a[href="https://github.com/jostyee"] </>me
+
+		{{ content }}
+
+		footer
+			p
+				| &copy;2012&ndash;2017 &middot;
+				a[href="https://josta.me"] Josta Yeè
+		{{ webfont }}
+		{{ ga }}
+
+		if date
+			{{ disqus }}

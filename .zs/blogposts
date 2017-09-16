@@ -1,0 +1,20 @@
+#!/bin/sh
+
+export LC_ALL=C
+
+#
+# Generates full list of posts in chronological order
+#
+
+echo "<ul>"
+	for f in ./blog/*.md ; do
+		d=$(zs var $f date)
+		if [ ! -z $d ] ; then
+			timestamp=`date -j -f %Y-%m-%d "$d" '+%s'`
+			url=`zs var $f url`
+			title=`zs var $f title | tr A-Z a-z`
+			descr=`zs var $f description`
+			echo "$timestamp <li><a href=\"$url\">$title</a> - $(date -r $timestamp "+%Y-%m-%d")</li>"
+		fi
+	done | sort -r -n | cut -d' ' -f2-
+echo "</ul>"

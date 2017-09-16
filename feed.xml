@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>Yeèの奇妙な冒険</title>
+		<link>https://josta.me/blog.html</link>
+		<description>哦啦啦啦</description>
+		<language>zh-cn</language>
+		<pubDate>{{ date -R }}</pubDate>
+		<lastBuildDate>{{ date -R }}</lastBuildDate>
+
+		{{ genrss }}
+
+	</channel>
+</rss>

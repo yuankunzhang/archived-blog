@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#
+# Generate RSS items
+#
+
+for f in ./blog/*.md ; do
+	d=$($ZS var $f date)
+	if [ ! -z $d ] ; then
+		timestamp=`date -j -f %Y-%m-%d "$d" '+%s'`
+		url=`$ZS var $f url`
+		title=`$ZS var $f title | tr A-Z a-z`
+		descr=`$ZS var $f description`
+		echo $timestamp \
+			"<item>" \
+			"<title>$title</title>" \
+			"<link>https://josta.me/$url</link>" \
+			"<description>$descr</description>" \
+			"<pubDate>$(date -r $timestamp)</pubDate>" \
+			"<guid>https://josta.me/$url</guid>" \
+		"</item>"
+	fi
+done | sort -r -n | cut -d' ' -f2-
